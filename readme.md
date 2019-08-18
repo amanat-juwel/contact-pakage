@@ -16,7 +16,7 @@ After updating composer, add the ServiceProvider to the providers array in confi
 
     Amanatjuwel\Contact\ContactServiceProvider::class,
 
-Use `php artisan vendor:publish` to create a config file located at `config/dompdf.php` which will allow you to define local configurations to change some settings (default paper etc).
+Use `php artisan vendor:publish` to create a config file located at `config/contact.php` which will allow you to define local configurations to change some settings (default paper etc).
 You can also use your ConfigProvider to set certain keys.
 
 ### Configuration
