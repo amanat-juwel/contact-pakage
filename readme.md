@@ -27,6 +27,11 @@ The Contact service provider registers its own database migration directory with
 
 	php artisan migrate
 
+.env =>
+
+	QUEUE_DRIVER=database
+	QUEUE_CONNECTION=database
+
 ## Using
 
 	localhost/myProject/contact
