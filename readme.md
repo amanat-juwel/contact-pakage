@@ -29,6 +29,8 @@ The Contact service provider registers its own database migration directory with
 
 ## Using
 
+	localhost/myProject/contact
+
 You can change the admin email address from 'config/contact.php' file
 
 
