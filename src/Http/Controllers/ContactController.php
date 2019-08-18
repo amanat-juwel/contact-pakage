@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 
 use Amanatjuwel\Contact\Models\Contact;
 
-use Amanatjuwel\Contact\Mail\ContactMailable;
-
-use Illuminate\Support\Facades\Mail;
+use Amanatjuwel\Contact\Jobs\SendEmailJob;
 
 class ContactController extends Controller
 {
@@ -25,8 +23,9 @@ class ContactController extends Controller
     {	
 
     	
-		Mail::to(config('contact.send_email_to'))->send(new ContactMailable($request->name,$request->phone));
-    	
+        //queue
+        dispatch(new SendEmailJob($request->name,$request->phone));
+
         $contact = new Contact;
         $contact->name = $request->name;
         $contact->phone = $request->phone;
